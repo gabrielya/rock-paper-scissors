@@ -22,26 +22,92 @@
                 
                 if(playerSelection.toLowerCase() == "rock" && 
                 computerSelection.toLowerCase() == "paper"){
-                    return "Computer wins. Paper beats rock.";
+                    console.log("Computer wins. Paper beats rock.");
+                    return false;
                 } else if(playerSelection.toLowerCase() == "rock" && 
                 computerSelection.toLowerCase() == "scissors"){
-                    return "You win! Rock beats scissors.";
+                    console.log("You win! Rock beats scissors.");
+                    return true;
                 } else if(playerSelection.toLowerCase() == "paper" && 
                 computerSelection.toLowerCase() == "scissors"){
-                    return "Computer wins. Scissors beat paper.";
+                    console.log("Computer wins. Scissors beat paper.");
+                    return false;
                 } else if(playerSelection.toLowerCase() == "paper" && 
                 computerSelection.toLowerCase() == "rock"){
-                    return "You win! Paper beats rock.";;
+                    console.log("You win! Paper beats rock.");
+                    return true;
                 } else if(playerSelection.toLowerCase() == "scissors" && 
                 computerSelection.toLowerCase() == "rock"){
-                    return "Computer wins. Rock beats scissors.";;
+                    console.log("Computer wins. Rock beats scissors.");
+                    return false;
                 } else if(playerSelection.toLowerCase() == "scissors" && 
                 computerSelection.toLowerCase() == "paper"){
-                    return "You win! Scissors beats paper.";;
+                    console.log("You win! Scissors beats paper.");
+                    return true; 
                 } else {
-                    return "Tie round."
+                    "It was a tie. Try again."
+                    return -1;
                 }
             }
+
+            function game() {
+                let humanWins = 0;
+                let computerWins = 0;
+
+                let game1 = playRound(playerSelection = prompt("Enter your choice."), computerPlay());
+                while(game1 == -1){
+                    game1 = playRound(playerSelection = prompt("Enter your choice."), computerPlay());
+                }
+                if(game1 == true){
+                    humanWins++;
+                } else {
+                    computerWins++;
+                }
+                let game2 = playRound(playerSelection = prompt("Enter your choice."), computerPlay());
+                while(game2 == -1){
+                    game2 = playRound(playerSelection = prompt("Enter your choice."), computerPlay());
+                }
+                if(game2 == true){
+                    humanWins++;
+                } else {
+                    computerWins++;
+                }
+                let game3 = playRound(playerSelection = prompt("Enter your choice."), computerPlay());
+                while(game3 == -1){
+                    game3 = playRound(playerSelection = prompt("Enter your choice."), computerPlay());
+                }
+                if(game3 == true){
+                    humanWins++;
+                } else {
+                    computerWins++;
+                }
+                let game4 = playRound(playerSelection = prompt("Enter your choice."), computerPlay());
+                while(game4 == -1){
+                    game4 = playRound(playerSelection = prompt("Enter your choice."), computerPlay());
+                }
+                if(game4 == true){
+                    humanWins++;
+                } else {
+                    computerWins++;
+                }
+                let game5 = playRound(playerSelection = prompt("Enter your choice."), computerPlay());
+                while(game5 == -1){
+                    game5 = playRound(playerSelection = prompt("Enter your choice."), computerPlay());
+                }
+                if(game5 == true){
+                    humanWins++;
+                } else {
+                    computerWins++;
+                }
+
+                if(humanWins > computerWins){
+                    console.log("The human won more games.");
+                } else {
+                    console.log("The computer won more games");
+                }
+
+            }
+
         </script>
     </body>
 </html>
